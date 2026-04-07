@@ -1,0 +1,152 @@
+/* ========== RESET & BASE ========== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  background: #f4f7fa;
+  color: #1f2a37;
+  line-height: 1.5;
+}
+
+/* ========== NAVBAR (gradien warna) ========== */
+.navbar {
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  padding: 16px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.navbar h1 { margin: 0; font-size: 22px; letter-spacing: .3px; }
+.menu { display: flex; gap: 12px; flex-wrap: wrap; }
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: .25s ease;
+  background: rgba(255,255,255,0.12);
+}
+.menu a:hover { background: rgba(255,255,255,0.28); transform: translateY(-1px); }
+
+/* ========== LAYOUT ========== */
+.container {
+  padding: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeIn .45s ease-in-out;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ========== CARDS ========== */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 22px rgba(31,42,55,0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 14px 26px rgba(31,42,55,0.12); }
+.card-title {
+  margin: 0 0 14px 0;
+  font-size: 20px;
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+/* ========== HERO / JUDUL ========== */
+.hero {
+  background:
+    radial-gradient(1200px 240px at 10% 0%, rgba(255,106,0,.18), transparent 60%),
+    radial-gradient(1200px 240px at 90% 0%, rgba(238,9,121,.18), transparent 60%),
+    #fff;
+}
+.judul h1 { margin: 0 0 6px 0; font-size: 26px; }
+.judul h2 { margin: 0 0 6px 0; font-weight: 600; color: #475569; }
+.judul h3 { margin: 0; font-weight: 700; color: #ff6a00; }
+
+/* ========== ACTION BUTTONS ========== */
+.actions { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; }
+.tombol {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(45deg, #6366f1, #22d3ee);
+  box-shadow: 0 8px 18px rgba(34,211,238,.25);
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.tombol.primary {
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  box-shadow: 0 8px 18px rgba(238,9,121,.25);
+}
+.tombol:hover { transform: translateY(-1px); opacity: .95; }
+
+/* ========== FLASH MESSAGE ========== */
+.flash { margin-top: 10px; }
+.badge {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 100px;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+.badge.success { background: #10b981; }
+.badge.info    { background: #3b82f6; }
+.badge.danger  { background: #ef4444; }
+
+/* ========== TABLE ========== */
+.table-wrap { overflow: auto; border-radius: 12px; }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+  background: linear-gradient(0deg, #ffffff 0%, #ffffff 100%);
+}
+.table th, .table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 14px;
+}
+.table th {
+  position: sticky; top: 0;
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  color: #fff;
+  z-index: 1;
+}
+.table tr:hover td { background: #f9fafb; }
+
+/* ========== ACTION LINKS (Edit/Hapus) ========== */
+.btn.small {
+  text-decoration: none;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: .2s ease;
+  display: inline-block;
+  color: #fff;
+}
+.edit  { background: #3b82f6; }
+.hapus { background: #ef4444; }
+.btn.small:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 640px) {
+  .navbar h1 { font-size: 18px; }
+  .menu a { padding: 6px 10px; font-size: 13px; }
+  .judul h1 { font-size: 22px; }
+  .table { min-width: 600px; }
+}
